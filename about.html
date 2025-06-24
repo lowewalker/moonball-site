@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Moonball</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to bottom, #4fb53f, #92fb36);
+      color: #000000;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a.back-link {
+      display: block;
+      text-align: center;
+      margin-top: 50px;
+      color: #ff0000;
+      text-decoration: none;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+    
+    .scroll-moon {
+      position: fixed;
+      bottom: -90vw;
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+      height: 100vw;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .scroll-stars {
+      position: fixed;
+      width: 120vw;
+      top: 0;
+      left: -10vw;
+      pointer-events: none;
+      z-index: -2;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>About Moonball</h1>
+
+  <section>
+    <h2>The Game</h2>
+    <p>Moonball is the ideal combination of ball striking, ball spin and ball speed.  The ball comes off the hand (or foot) with terrific speed, but because of its weight, it slows before it reaches the end of the court, and it spins in a very pleasing way.</p>
+    <p>Because a player can use their feet, it removes the danger of leaning over to play a low ball with a paddle.</p>
+    <p>Good players will use their right hand and their left hand equally, as well as their feet (or head).  </p>
+  </section>
+
+  <section>
+    <h2>The Ball</h2>
+    <p>Hedstrom makes the best ball.  It should be lightweight (around 100 grams), appoximately the size of a volleyball with a stiff yet bouncy skin.</p>
+    <p><a href="https://www.canadiantire.ca/en/pdp/hedstrom-kids-inflatable-vinyl-bouncy-ball-toy-for-indoor-outdoor-play-assorted-0502529p.html" target="_blank" rel="noopener noreferrer">Available at Canadian Tire</a></p>
+    <p><img src="Hedstrom-bouncy-ball.jpg" alt="Hedstrom Bouncy Ball" style="max-width: 100%; height: auto;" /></p>
+  </section>
+
+  <a class="back-link" href="index.html">← Back to Home</a>
+
+  <div style="height: 20vh;"></div>
+
+  <img src="moon.png" alt="Moon" class="scroll-moon" />
+  <img src="stars.png" alt="Stars" class="scroll-stars" />
+
+  <script>
+    const moon = document.querySelector('.scroll-moon');
+    const stars = document.querySelector('.scroll-stars');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollRatio = docHeight > 0 ? scrollTop / docHeight : 0;
+
+      const yOffset = scrollRatio * (window.innerHeight - window.innerHeight * 1.2);
+      const rotation = scrollRatio * 30;
+
+      moon.style.transform = `translateX(-50%) translateY(${yOffset}px) rotate(${rotation}deg)`;
+      stars.style.transform = `translateY(${yOffset/5}px)`;
+    });
+
+    
+  </script>
+
+
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moonball Rules</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: linear-gradient(to bottom, #ff7e5f, #feb47b);
+      color: #000000;
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #ffffff;
+      padding-bottom: 5px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    a.back-link {
+      display: block;
+      text-align: center;
+      margin-top: 50px;
+      color: #ff0000;
+      text-decoration: none;
+    }
+
+    a.back-link:hover {
+      text-decoration: underline;
+    }
+
+    .scroll-moon {
+      position: fixed;
+      bottom: -90vw;
+      left: 50%;
+      transform: translateX(-50%) rotate(0deg);
+      height: 100vw;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .scroll-stars {
+      position: fixed;
+      width: 120vw;
+      top: 0;
+      left: -10vw;
+      pointer-events: none;
+      z-index: -2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Moonball Rules</h1>
+
+  <section>
+    <h2>Overview</h2>
+    <ul>
+      <li>The ball is lightweight (100 g) and the size of a volleyball.</li>
+      <li>The court and net dimensions are the same as pickleball.</li>
+      <li>A player can hit the ball over the net with any part of their body.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Gameplay</h2>
+    <ul>
+      <li>To start the game, a coin toss determines the side to serve first.</li>
+      <li>The side to serve first alternates in subsequent games.</li>
+      <li>The side that wins the point serves the next ball.</li>
+      <li>A player can let the ball bounce or hit it straight out of the air from anywhere on the court.</li>
+      <li>A side scores a point if the other side hits the ball out, fails to return a ball, or commits a fault.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The Serve</h2>
+    <ul>
+      <li>The server can stand anywhere on their side of the court to serve.</li>
+      <li>The receiver can stand anywhere on their side of the court to receive the serve.</li>
+      <li>After the server hits the serve, it must bounce on the server's court before going over the net.</li>
+      <li>The receiver must let the serve bounce on their court before returning it.</li>
+      <li>The serve is the only time a player may hit the ball onto their own court before it goes over.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Scoring</h2>
+    <ul>
+      <li>Games are played to 10 points; win by 2.</li>
+      <li>Sets are played to 50 points. Each game counts for 10 (even if the final score is 11-9).</li>
+      <li>Example: Side A has won 3 games; Side B was won 1 game. The set score is 30-10.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Two-Point Rule</h2>
+    <ul>
+      <li>A player can score 2 points if they play the ball over without using their hands or arms.</li>
+      <li>If the opposing team cannot return a no-hand ball, or returns it into the net, the result is 2 points.</li>
+      <li>If the opposing team returns a no-hand ball over the net but out, the result is 1 point.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Faults</h2>
+    <ul>
+      <li>Touching the net during gameplay with any part of the body is a fault.</li>
+      <li>Impeding the arm swing or follow-through of a player at the net is a fault.</li>
+      <li>Hitting the ball twice is a fault. Exception: if the ball contacts the player's body multiple times within the
+        same overall motion, no fault is committed.</li>
+    </ul>
+  </section>
+
+  <a class="back-link" href="index.html">← Back to Home</a>
+
+  <div style="height: 20vh;"></div>
+
+  <img src="moon.png" alt="Moon" class="scroll-moon" />
+  <img src="stars.png" alt="Stars" class="scroll-stars" />
+
+  <script>
+    const moon = document.querySelector('.scroll-moon');
+    const stars = document.querySelector('.scroll-stars');
+
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollRatio = docHeight > 0 ? scrollTop / docHeight : 0;
+
+      const yOffset = scrollRatio * (window.innerHeight - window.innerHeight * 1.2);
+      const rotation = scrollRatio * 30;
+
+      moon.style.transform = `translateX(-50%) translateY(${yOffset}px) rotate(${rotation}deg)`;
+      stars.style.transform = `translateY(${yOffset/5}px)`;
+    });
+
+    
+  </script>
+
+
+</body>
+
+</html>
