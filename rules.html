@@ -71,6 +71,15 @@
       pointer-events: none;
       z-index: -2;
     }
+    
+    @media (max-width: 768px) {
+      .scroll-stars {
+        width: auto;
+        height: 120vh;
+        top: -10vh;
+        left: 0;
+      }
+    }
   </style>
 </head>
 
@@ -90,8 +99,8 @@
   <section>
     <h2>Gameplay</h2>
     <ul>
-      <li>To start the game, a coin toss determines the side to serve first.</li>
-      <li>The side to serve first alternates in subsequent games.</li>
+      <li>To start the match, a coin toss determines the side to serve first.  The side to serve first alternates in subsequent games.</li>
+      <li>Switch sides of the court after every game.</li>
       <li>The side that wins the point serves the next ball.</li>
       <li>A player can let the ball bounce or hit it straight out of the air from anywhere on the court.</li>
       <li>A side scores a point if the other side hits the ball out, fails to return a ball, or commits a fault.</li>
@@ -157,7 +166,7 @@
       const rotation = scrollRatio * 30;
 
       moon.style.transform = `translateX(-50%) translateY(${yOffset}px) rotate(${rotation}deg)`;
-      stars.style.transform = `translateY(${yOffset/5}px)`;
+      stars.style.transform = `translateY(${yOffset/3}px)`;
     });
 
     
