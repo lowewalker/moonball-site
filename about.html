@@ -32,14 +32,6 @@
       padding-bottom: 5px;
     }
 
-    ul {
-      padding-left: 20px;
-    }
-
-    li {
-      margin-bottom: 8px;
-    }
-
     a.back-link {
       display: block;
       text-align: center;
@@ -69,6 +61,15 @@
       left: -10vw;
       pointer-events: none;
       z-index: -2;
+    }
+
+    @media (max-width: 768px) {
+      .scroll-stars {
+        width: auto;
+        height: 120vh;
+        top: -10vh;
+        left: 0;
+      }
     }
   </style>
 </head>
