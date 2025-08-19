@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moonball for Schools</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <h1><a href="index.html">moonball</a></h1>
+  </header>
+
+  <div class="hamburger" aria-label="Menu">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Get Started</a></li>
+      <li><a href="rules.html">The Rules</a></li>
+      <li><a href="schools.html">For Schools</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <h1>Resources for Schools</h1>
+
+    <img src="assets/moonball_logo.png" class="logo">
+
+    <section>
+      <h2>Tournament Setup</h2>
+      <p>Organize a tournament in your school! Using this tracking sheet, you can give students a fair ranking compared
+        to other players, even without having everyone play everyone!</p>
+      <p>Make a copy of the spreadsheet below to track results. This spreadsheet uses a formula that allows you to rank
+        players, even if they're playing in a casual, unstructured format.</p>
+
+      <a class="inline-button" target="_blank"
+        href="https://docs.google.com/spreadsheets/d/15Zj5sy5LWZySYw2WfL7a_C9dm36sb0pavDgaTpgEOOg/edit?pli=1&gid=231461923#gid=231461923">Moonball
+        Leaderboard Spreadsheet</a></p>
+      <p>Players get a ranking based on these criteria:</p>
+      <ul>
+        <li>Overall Wins and Losses</li>
+        <li>Number of Games Played</li>
+        <li>Number of Different Opponents</li>
+      </ul>
+    </section>
+
+    <section class="step">
+      <div class="text">
+        <p><a href="https://youtu.be/Z86pXdY6AvQ" target="_blank">VIDEO TUTORIAL</a></p>
+      </div>
+
+    </section>
+
+    <h2>Float Timer</h2>
+
+    <section class="step">
+      <div class="text">
+        <p>A fun challenge for students is to see how long they can keep a ball floating in the air!</p>
+        <ul>
+          <li>Hit the ball with backspin (slice), and record the time from contact to floor.</li>
+          <li>Have someone hold a bar that they need to go under to prevent them from trying to hit it straight up in
+            the air. (Optional)</li>
+          <li>Use this handy <a href="https://lowewalker.github.io/stopwatch/">Web Timer</a>. It features a giant
+            start/stop button - easier to hit while watching for ball contacts.</li>
+        </ul>
+      </div>
+
+      <div class="image">
+        <a href="https://lowewalker.github.io/stopwatch/"><img src="assets/moonball_float_timer.jpg"
+            alt="Float Timer"></a>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
+
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('open');
+    });
+  </script>
+
+</body>
+
+</html>

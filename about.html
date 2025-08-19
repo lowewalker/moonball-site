@@ -1,132 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Moonball</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      background: linear-gradient(to bottom, #4fb53f, #92fb36);
-      color: #000000;
-      padding: 40px 20px;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-      text-align: center;
-    }
-
-    section {
-      margin-bottom: 40px;
-    }
-
-    h2 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #ffffff;
-      padding-bottom: 5px;
-    }
-
-    a.back-link {
-      display: block;
-      text-align: center;
-      margin-top: 50px;
-      color: #ff0000;
-      text-decoration: none;
-    }
-
-    a.back-link:hover {
-      text-decoration: underline;
-    }
-    
-    .scroll-moon {
-      position: fixed;
-      bottom: -90vw;
-      left: 50%;
-      transform: translateX(-50%) rotate(0deg);
-      height: 100vw;
-      pointer-events: none;
-      z-index: -1;
-    }
-
-    .scroll-stars {
-      position: fixed;
-      width: 120vw;
-      top: 0;
-      left: -10vw;
-      pointer-events: none;
-      z-index: -2;
-    }
-
-    @media (max-width: 768px) {
-      .scroll-stars {
-        width: auto;
-        height: 120vh;
-        top: -10vh;
-        left: 0;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 </head>
+
 <body>
+  <header>
+    <h1><a href="index.html">moonball</a></h1>
+  </header>
 
-  <h1>About Moonball</h1>
+  <div class="hamburger" aria-label="Menu">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
 
-  <section>
-    <h2>The Game</h2>
-    <p>Moonball is a ball-striking game played on a pickleball court with a lightweight bouncy ball.</p>
-    <p>Players can hit the ball with any part of their body.  Kicking the ball removes the danger of leaning over to play a low ball with a paddle.</p>
-    <p>Good players will use their right hand and their left hand equally, as well as their feet (or head).</p>
-  </section>
+  <nav class="menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">Get Started</a></li>
+      <li><a href="rules.html">The Rules</a></li>
+      <li><a href="schools.html">For Schools</a></li>
+    </ul>
+  </nav>
 
-  <section>
-    <h2>The Ball</h2>
-    <p>The ball is the key to this game.  Once you get the feel of hitting a moonball, you will be hooked!</p>
-    <p>The ball comes off the hand (or foot) with terrific speed, but because of its light weight, it slows before it reaches the end of the court, and you can make it spin in a very pleasing way.</p>
-    <p>Hedstrom makes the best ball.  It should be very light (around 100 grams), appoximately the size of a volleyball with a stiff yet bouncy skin.</p>
-    <p><a href="https://www.canadiantire.ca/en/pdp/hedstrom-kids-inflatable-vinyl-bouncy-ball-toy-for-indoor-outdoor-play-assorted-0502529p.html" target="_blank" rel="noopener noreferrer">Available at Canadian Tire</a></p>
-    <p><img src="Hedstrom-bouncy-ball.jpg" alt="Hedstrom Bouncy Ball" style="max-width: 100%; height: auto;" /></p>
-  </section>
+  <main>
 
-  <section>
-    <h2>The History</h2>
-    <p>The game originates from the love of the schoolyard game "four-square".  But what do you do when you don't have 4 players?  Invent a new game of course!</p>
-    <p>We called it Alleyball, and we played it in the alley behind our house in Winnipeg.  Back then, the game was played with no net.</p>
-    <p>The childhood house is gone, but the alley remains!</p>
-    <p><img src="alleyball_court.png" alt="The Original Alleyball Court" style="max-width: 100%; height: auto;" /></p>
-  </section>
+    <h1>Getting Started</h1>
 
-  <a class="back-link" href="index.html">← Back to Home</a>
+    <img src="assets/moonball_logo.png" class="logo">
 
-  <div style="height: 20vh;"></div>
+    <h2>Step 1: Get a Ball</h2>
 
-  <img src="moon.png" alt="Moon" class="scroll-moon" />
-  <img src="stars.png" alt="Stars" class="scroll-stars" />
+    <section class="step">
+      <div class="text">
+        <p>The ball is the key to this game! The ball is lightweight and slightly bigger than a volleyball.</p>
+        <p>You can hit this ball with power, or use spin to create incredible, mind-bending shots!  No ball in the world spins with as much action as this one.</p>
+        <p>Hedstrom makes the best ball. It should be very light (around 100 grams), appoximately 9 inches (23 cm) in
+          diameter with a stiff yet bouncy skin.</p>
+        <p><a
+            href="https://www.canadiantire.ca/en/pdp/hedstrom-kids-inflatable-vinyl-bouncy-ball-toy-for-indoor-outdoor-play-assorted-0502529p.html"
+            target="_blank" rel="noopener noreferrer">Available at Canadian Tire</a></p>
+      </div>
+
+      <div class="image">
+        <img src="assets/moonball_ball.jpg" alt="Moonball">
+      </div>
+    </section>
+
+    <h2>Step 2: Find a Court</h2>
+
+    <section class="step reverse">
+      <div class="text">
+        <p>Moonball is played indoors on a badminton court or outdoors on a pickleball court. The net height is the same
+          as a pickleball net.</p>
+        <p>There is no "kitchen" - feel free to volley from anywhere!  The only lines needed are the sidelines and endlines.</p>
+      </div>
+      <div class="image">
+        <img src="assets/moonball_court.jpeg" alt="Moonball court">
+      </div>
+    </section>
+
+    <h2>Step 3: Start Playing!</h2>
+
+    <section class="step">
+      <div class="text">
+        <p>To serve the ball, you must spike the ball onto your side to bounce it over. It must bounce on the other side
+          before the opponent returns it (similar to table tennis serving rules).  You can stand anywhere to serve.</p>
+        <p>Players can hit the ball with any part of their body.  
+          Good players will use their right and left hands equally, and their feet whenever necessary.</p>
+        <p>Read the full <a href="rules.html">Moonball Rules</a> here.</p>
+      </div>
+      <div class="image">
+        <img src="assets/how_to_serve.png" alt="How to serve">
+      </div>
+    </section>
+  </main>
 
   <script>
-    const moon = document.querySelector('.scroll-moon');
-    const stars = document.querySelector('.scroll-stars');
+    const hamburger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.menu');
 
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollRatio = docHeight > 0 ? scrollTop / docHeight : 0;
-
-      const yOffset = scrollRatio * (window.innerHeight - window.innerHeight * 1.2);
-      const rotation = scrollRatio * 30;
-
-      moon.style.transform = `translateX(-50%) translateY(${yOffset}px) rotate(${rotation}deg)`;
-      stars.style.transform = `translateY(${yOffset/3}px)`;
+    hamburger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      hamburger.classList.toggle('open');
     });
-
-    
   </script>
 
-
 </body>
+
 </html>
