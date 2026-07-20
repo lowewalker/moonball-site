@@ -5,48 +5,297 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Moonball</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      line-height: 1.6;
+      background: white;
+      color: black;
+      scroll-behavior: smooth;
+    }
+
+    main {
+      position: relative;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Shrikhand', cursive;
+      font-size: 3rem;
+      margin: 30px;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      border-bottom: 2px solid black;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    li {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .section-spacer {
+      height: 80px;
+    }
+
+    .main-message {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 4rem;
+      font-weight: bold;
+      text-align: center;
+      color: white;
+    }
+
+    .emphasis-block {
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 40px;
+      border-radius: 10px;
+      border: 2px solid black;
+      background-color: yellow;
+      padding: 10px;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      height: 80vh;
+      width: 100%;
+
+      clip-path: ellipse(100% 100% at 50% 0%);
+    }
+
+    .hero-video {
+      position: absolute;
+      inset: 0;
+      height: 80vh;
+      width: 100%;
+
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .block-image {
+      display: block;
+      margin: 20px auto;
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      z-index: 1;
+    }
+
+    #stars {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      background-image: url("assets/star.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      filter: invert(74%) sepia(35%) saturate(738%) hue-rotate(174deg) brightness(97%) contrast(90%);
+      opacity: 0;
+      animation: twinkle 5s ease-in-out forwards;
+    }
+
+    @keyframes twinkle {
+
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      30% {
+        opacity: 1;
+      }
+
+      70% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+
+    }
+  </style>
   <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-  <video class="bg-video" autoplay muted loop playsinline>
-    <source src="assets/background.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <div id="header"></div>
 
-  <header>
-    <h1><a href="index.html">moonball</a></h1>
-  </header>
+  <div id="stars"></div>
 
-  <div class="hamburger" aria-label="Menu">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
+  <section class="hero" id="top">
 
-  <nav class="menu">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">The Game</a></li>
-      <li><a href="rules.html">The Rules</a></li>
-      <li><a href="schools.html">For Schools</a></li>
-    </ul>
-  </nav>
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="assets/background.mp4" type="video/mp4">
+    </video>
 
-  <div class="main-message">You are the paddle.</div>
-  <a class="start-button" href="about.html">Get started</a>
+    <div class="hero-content">
+      <div class="main-message">You are the paddle.</div>
+    </div>
+
+  </section>
+
+  <main>
+
+
+    <section id="about">
+      <h1>The Basics</h1>
+      <h2>Moonball is...</h2>
+      <ul>
+        <li>played on a pickleball court with a pickleball net</li>
+        <li>played with a large, lightweight ball using just your hands (and feet!)</li>
+        <li>played 1-on-1 or 2-on-2</li>
+      </ul>
+      <h2>To serve the ball, you must...</h2>
+      <ul>
+        <li>stand anywhere (no need to go behind the baseline!)</li>
+        <li>hit the ball so that it bounces once on your side of the court and then goes over the net</li>
+      </ul>
+      <img src="assets/how_to_serve.png" alt="How to serve" class="block-image">
+      <h2>To return the serve, you must...</h2>
+      <ul>
+        <li>wait for the ball to also bounce on your side</li>
+        <li>hit the ball back over the net</li>
+      </ul>
+      <div class="emphasis-block">Exception: You can volley the serve (not wait for it to bounce) if you are behind the
+        non-volley line (7 feet back from the net)</div>
+      <h2>Then just keep playing!</h2>
+      <ul>
+        <li>games to 10 points</li>
+        <li>whoever wins the point serves the next ball</li>
+        <li>must win by 2 points</li>
+        <li>no "kitchen" rule after the serve - hit the ball out of the air or let it bounce once</li>
+      </ul>
+
+    </section>
+
+    <div class="section-spacer"></div>
+
+    <section id="ball">
+      <h1>The Ball</h1>
+      <h2>Ball Basics</h2>
+      <p>The ball is the key to this game! The ball is lightweight and slightly bigger than a volleyball.</p>
+      <ul>
+        <li>Diameter: 20-22 cm</li>
+        <li>Weight: 100 grams</li>
+        <li>Material: soft, flexible, and durable</li>
+      </ul>
+      <img src="assets/moonball_ball.jpg" alt="Moonball" class="block-image">
+      <p>You can hit this ball with any part of your body. The shot choices are infinite!</p>
+      <ul>
+        <li>Use power and the ball will pop off your hand with incredible vigor!</li>
+        <li>Or use spin to create incredible, mind-bending shots!</li>
+        <li>No ball in the world spins with as much action as this one.</li>
+      </ul>
+
+
+      <h2>Where to Buy</h2>
+      <p>Any bouncy kid's ball will do as long as it's lightweight and slighly bigger than a volleyball.
+        Hedstrom makes the best one.  Available at Canadian Tire for $5.99.</p>
+      <p><a
+          href="https://www.canadiantire.ca/en/pdp/hedstrom-kids-inflatable-vinyl-bouncy-ball-toy-for-indoor-outdoor-play-assorted-0502529p.html"
+          target="_blank" rel="noopener noreferrer">Canadian Tire - Hedstrom Kids' Inflatable Vinyl Bouncy Ball</a></p>
+    </section>
+
+    <div class="section-spacer"></div>
+
+    <section id="history">
+      <h1>History of the Game</h1>
+      <p>The game originates from the love of the schoolyard game "four-square". But what do you do when you don't have
+        4 players? Invent a new game of course!</p>
+      <p>We called it Alleyball, and we played it in the alley behind our house in Winnipeg. Back then, the game was
+        played with no net. What could go wrong??</p>
+      <p>The childhood house is gone, but the alley remains!</p>
+      <img class="block-image" src="assets/alleyball_court.png" alt="The Original Alleyball Court">
+    </section>
+
+  </main>
+
+
 
   <script>
-    const hamburger = document.querySelector('.hamburger');
-    const menu = document.querySelector('.menu');
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header').innerHTML = data;
 
-    hamburger.addEventListener('click', () => {
-      menu.classList.toggle('open');
-      hamburger.classList.toggle('open');
-    });
+        const hamburger = document.querySelector('.hamburger');
+        const menu = document.querySelector('.menu');
+
+        hamburger.addEventListener('click', () => {
+          menu.classList.toggle('open');
+          hamburger.classList.toggle('open');
+        });
+      });
+
+    const starContainer = document.getElementById("stars");
+
+    function createStar() {
+
+      const star = document.createElement("div");
+      star.className = "star";
+
+      const size = Math.random() * 30 + 10;
+
+      star.style.width = size + "px";
+      star.style.height = size + "px";
+
+      star.style.left = Math.random() * 100 + "%";
+      star.style.top = Math.random() * 100 + "%";
+
+      star.style.animationDuration =
+        (Math.random() + 1) + "s";
+
+      starContainer.appendChild(star);
+
+      star.addEventListener("animationend", () => {
+        star.remove();
+      });
+    }
+
+    setInterval(createStar, 100);
   </script>
 
 
