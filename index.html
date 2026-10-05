@@ -149,10 +149,24 @@
       background-image: url("assets/star.png");
       background-size: contain;
       background-repeat: no-repeat;
-
-      filter: invert(74%) sepia(35%) saturate(738%) hue-rotate(174deg) brightness(97%) contrast(90%);
+    
       opacity: 0;
       animation: twinkle 5s ease-in-out forwards;
+    }
+    
+    .star-blue {
+      filter: invert(74%) sepia(35%) saturate(738%) hue-rotate(174deg)
+              brightness(97%) contrast(90%);
+    }
+    
+    .star-yellow {
+      filter: invert(85%) sepia(30%) saturate(800%) hue-rotate(5deg)
+              brightness(105%) contrast(90%);
+    }
+    
+    .star-orange {
+      filter: invert(75%) sepia(45%) saturate(900%) hue-rotate(350deg)
+              brightness(105%) contrast(90%);
     }
 
     @keyframes twinkle {
@@ -316,20 +330,31 @@
 
       const star = document.createElement("div");
       star.className = "star";
-
+    
+      // 60% blue, 25% yellow, 15% orange
+      const r = Math.random();
+    
+      if (r < 0.60) {
+        star.classList.add("star-blue");
+      } else if (r < 0.85) {
+        star.classList.add("star-yellow");
+      } else {
+        star.classList.add("star-orange");
+      }
+    
       const size = Math.random() * 20 + 10;
-
+    
       star.style.width = size + "px";
       star.style.height = size + "px";
-
+    
       star.style.left = Math.sqrt(Math.sqrt(Math.random())) * 100 + "%";
       star.style.top = Math.random() * 100 + "%";
-
+    
       star.style.animationDuration =
         (Math.random() + 1) + "s";
-
+    
       starContainer.appendChild(star);
-
+    
       star.addEventListener("animationend", () => {
         star.remove();
       });
